@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Can order any 2 dimensional array based on column name.
 module ColumnOrderHelper
   def self.order(data, order_column)
     header = data.shift

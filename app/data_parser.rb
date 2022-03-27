@@ -8,6 +8,7 @@ class DataParser
     @data = data
   end
 
+  # this constant can be moved to inside format as an argument for making dynamic.
   CITIES = {
     NYC: 'New York City',
     LA: 'Los Angeles'
@@ -18,6 +19,8 @@ class DataParser
     self
   end
 
+  # for each column DateHelper tries to parse date. This can also be moved as an argumentt giving specific column
+  # and based on that parse date.
   def format(column_order: ['first_name', 'city', 'birthdate'])
     header = @data.first
 
@@ -34,6 +37,7 @@ class DataParser
     self
   end
 
+  # for first time we need header to not loose control with data
   def retrieve(with_header: false)
     return @data if with_header
 
